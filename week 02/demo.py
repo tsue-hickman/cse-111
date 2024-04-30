@@ -1,18 +1,31 @@
-def area_of_a_square(side):
-    area = side ** 2 
-    return area
-
-print (area_of_a_square(5)) 
 
 
-
-
-
+def add_to_roster(roster):
+    while True:
+        name = input('What name would you like to add to the roster? ')
+        if name == '':
+            break
+        roster.append(name)
 
 
 
+# what is wrong with this code?
+roster = []
+add_to_roster(roster)
+
+print(roster)
 
 
+
+
+
+
+# simple function example
+# def area_of_a_square(side):
+#     area = side ** 2 
+#     return area
+
+# print (area_of_a_square(5)) 
 
 
 
