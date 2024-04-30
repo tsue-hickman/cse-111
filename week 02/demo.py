@@ -1,8 +1,29 @@
-from datetime import datetime
+def area_of_a_square(side):
+    area = side ** 2 
+    return area
 
-def what_day_is_it():
-    timestamp = datetime.now()
-    print (timestamp)
+print (area_of_a_square(5)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# from datetime import datetime
+
+# def what_is_the_day():
+#     timestamp = datetime.now()
+#     print (timestamp)
+
+# what_is_the_day()
 
 
 
