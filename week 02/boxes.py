@@ -24,3 +24,14 @@ print (f"For {num_items}, items, packing {items_per_box}" f" items in each box, 
 #  the other boxes.
 
 
+# Write a program that computes the number of boxes required to pack items.
+
+# Run your program using the inputs shown in the Sample Run section of the assignment and verify that your program's output matches the sample run output.
+
+# Compare your program to the sample solution.
+
+# Created a functional (functions based) version of the program.
+
+# Shared my code with an AI and had an exploratory conversation of how to improve it
+
+
