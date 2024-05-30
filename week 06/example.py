@@ -1,5 +1,3 @@
-# Copyright 2020, Brigham Young University-Idaho. All rights reserved.
-
 def main():
     print("This program computes the fuel efficiency")
     print("of your vehicle in miles per gallon.")
@@ -8,7 +6,7 @@ def main():
     curr_odom = float(input("Enter the current odometer reading in miles: "))
     fuel_amount = float(input("Enter the amount of fuel in U.S. gallons: "))
 
-    efficiency = miles_per_gallon(fuel_amount, prev_odom, curr_odom)
+    efficiency = miles_per_gallon(prev_odom, curr_odom, fuel_amount,)
 
     print(f"{efficiency} miles per gallon")
 
