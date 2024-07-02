@@ -7,6 +7,15 @@ GIVEN_NAME_INDEX = 0
 SURNAME_INDEX = 1
 BIRTHDATE_INDEX = 2
 
+ def main():
+
+        student_list = read_compound_list("pupils.csv")
+
+        extract_birthdate = lambda student: student[BIRTHDATE_INDEX]
+
+        sorted_students = sorted(student_list, key=extract_birthdate)
+
+        print(sorted_students)
 
 def read_compound_list(filename):
     """Read the text from a CSV file into a compound list.
@@ -39,3 +48,10 @@ def read_compound_list(filename):
             compound_list.append(row)
 
     return compound_list
+    
+    def print_list(list_to_print):
+        for item in list_to_print:
+            print(item)
+
+    if__name__ == "__main__":
+    main()

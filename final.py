@@ -1,3 +1,5 @@
+import random
+
 personality_scores = {
     "extrovert": 0,
     "introvert": 0,
