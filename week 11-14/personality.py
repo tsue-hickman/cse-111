@@ -131,26 +131,51 @@ def update_personality_scores(scores, answer):
     scores[opposites[answer]] -= 1
 
 def get_personality_type(scores):
-    return "".join([
-        "E" if scores["extrovert"] >= scores["introvert"] else "I",
-        "N" if scores["intuition"] >= scores["sensing"] else "S",
-        "F" if scores["feeling"] >= scores["thinking"] else "T",
-        "J" if scores["judging"] >= scores["perceiving"] else "P"
-    ])
+    personality = ""
+    personality += "E" if scores["extrovert"] >= scores["introvert"] else "I"
+    personality += "S" if scores["sensing"] >= scores["intuition"] else "N"
+    personality += "T" if scores["thinking"] >= scores["feeling"] else "F"
+    personality += "J" if scores["judging"] >= scores["perceiving"] else "P"
+    return personality
 
 def get_type_mapping():
     return {
         "ISTJ": {"house": "Hufflepuff", "element": "Earth", "animal": "Beaver"},
         "ISTP": {"house": "Ravenclaw", "element": "Air", "animal": "Wolf"},
-        # ... (rest of the mappings)
+        "ISFJ": {"house": "Hufflepuff", "element": "Earth", "animal": "Retriever"},
+        "ISFP": {"house": "Gryffindor", "element": "Fire", "animal": "Dolphin"},
+        "INTJ": {"house": "Ravenclaw", "element": "Air", "animal": "Owl"},
+        "INTP": {"house": "Ravenclaw", "element": "Air", "animal": "Chameleon"},
+        "INFJ": {"house": "Gryffindor", "element": "Water", "animal": "Dolphin"},
+        "INFP": {"house": "Hufflepuff", "element": "Water", "animal": "Deer"},
+        "ESTJ": {"house": "Slytherin", "element": "Earth", "animal": "Lion"},
+        "ESTP": {"house": "Gryffindor", "element": "Fire", "animal": "Cheetah"},
+        "ESFJ": {"house": "Hufflepuff", "element": "Earth", "animal": "Labrador"},
+        "ESFP": {"house": "Gryffindor", "element": "Fire", "animal": "Otter"},
+        "ENTJ": {"house": "Slytherin", "element": "Air", "animal": "Eagle"},
+        "ENTP": {"house": "Ravenclaw", "element": "Air", "animal": "Monkey"},
+        "ENFJ": {"house": "Gryffindor", "element": "Water", "animal": "Horse"},
+        "ENFP": {"house": "Gryffindor", "element": "Fire", "animal": "Butterfly"}
     }
 
 def get_type_attributes(personality_type, type_mapping):
     return type_mapping.get(personality_type, {"house": "Unknown", "element": "Unknown", "animal": "Unknown"})
 
+def initialize_personality_scores():
+    return {
+        "extrovert": 0, "introvert": 0,
+        "sensing": 0, "intuition": 0,
+        "thinking": 0, "feeling": 0,
+        "judging": 0, "perceiving": 0
+    }
+
+def get_questions():
+    return questions  
+
+
 def run_personality_test():
     print("Welcome to the personality test!")
-    scores = initialize_personality_scores()
+    scores = personality_scores.copy()
     questions = get_questions()
     selected_questions = random.sample(list(questions), 20)
 
